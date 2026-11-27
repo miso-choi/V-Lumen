@@ -78,7 +78,8 @@ in [notes/seed1_results.md](notes/seed1_results.md)):
 python scripts/download_checkpoints.py        # -> checkpoints/*.pt (SHA-256 verified)
 ```
 
-Google Drive folder: _link to be added_.
+The files are hosted in this [Google Drive folder](https://drive.google.com/drive/folders/1RZJCv18hLUlZyM_J4v5wDL-LyPc8uvyI?usp=sharing);
+`download_checkpoints.py` fetches them from there.
 
 ## Reproducing the paper
 
