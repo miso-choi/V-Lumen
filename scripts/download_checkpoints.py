@@ -14,15 +14,15 @@ import gdown
 # name -> (Google Drive file id, sha256)
 CHECKPOINTS = {
     "vlumen_only":  ("TODO_FILE_ID",
-                    "3d5d546de6195c9334d88f37aa1802e252526dc1ef46eb7d16304e4ded923677"),
+                    "327d80f4ad6bfde81a42247de04705c92c92cdce58b51f626b7035db6d20d488"),
     "lora_only":    ("TODO_FILE_ID",
-                    "b2832611ddde8c9bc84ea9dc18c092a26f1882059b19186c6eb78110dc06fb0d"),
+                    "b15e07682613a2e3899feec0727959cb90d645d2d1a88fb922066f1f681aa01a"),
     "lora_vlumen":  ("TODO_FILE_ID",
-                    "371d694572501bead98175a1b5a939d08328f080df9acbae9c6397926b87a7be"),
+                    "ac611a2cd42e6e8d32d0438189ae36652bd11dfc0f42797f79a50118d1c763ef"),
     "moe_only":     ("TODO_FILE_ID",
-                    "7849cd58f9b440b88d41c2e816f0121dd12bd9bdaa98a4f18becf906aad3d896"),
+                    "6d2c76a346a91e8cbeb2a6719d3928d3fa816ca3d200be504bc928c5ac15f798"),
     "moe_vlumen":   ("TODO_FILE_ID",
-                    "bf8d86a4fbd4a00c225b130e77c0177bede7b5f03cc5acf312061e6aafc12408"),
+                    "1bb0387a8e213994df03c5001dc892e3a1d52c1667171e3162a2bbb5a543f6d8"),
 }
 OUT_DIR = Path(__file__).resolve().parents[1] / "checkpoints"
 

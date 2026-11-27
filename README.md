@@ -158,25 +158,29 @@ Avg Δ = average gain over the vanilla backbone, pp)
 | MoE-only | 13.48 ± 0.90 | 4.85 ± 0.35 | 23.53 ± 3.87 | 33.21 ± 2.22 | 20.10 ± 0.26 | 19.03 ± 0.95 | +16.85 ± 0.95 |
 | MoE + V-LUMEN | 14.19 ± 0.49 | 4.70 ± 1.02 | 25.07 ± 1.43 | 32.54 ± 1.17 | 19.00 ± 2.59 | 19.10 ± 0.91 | +16.92 ± 0.91 |
 
-Released seed-1 checkpoints (trained from scratch with this code; single seed, so
-differences of about one standard deviation from the 3-seed mean are expected):
+Released seed-1 checkpoints (the seed-1 runs of the paper, evaluated with this code):
 
 | Setting | ChartMus. | FRIEDA | VisRes | MMMU | MMMU-Pro | Avg | Avg Δ |
 |---|---|---|---|---|---|---|---|
-| V-LUMEN-only | 16.33 | 5.00 | 23.60 | 32.12 | 19.40 | 19.29 | +17.11 |
-| LoRA-only | 17.34 | 6.14 | 22.10 | 39.02 | 26.60 | 22.24 | +20.06 |
-| LoRA + V-LUMEN | 18.02 | 5.23 | 21.40 | 41.66 | 28.90 | 23.04 | +20.86 |
-| MoE-only | 14.53 | 4.32 | 28.20 | 32.12 | 19.40 | 19.71 | +17.53 |
-| MoE + V-LUMEN | 14.53 | 5.68 | 22.50 | 34.38 | 19.30 | 19.28 | +17.10 |
+| V-LUMEN-only | 15.88 | 4.77 | 26.70 | 34.38 | 20.70 | 20.49 | +18.31 |
+| LoRA-only | 17.91 | 5.45 | 22.10 | 42.16 | 26.10 | 22.74 | +20.57 |
+| LoRA + V-LUMEN | 18.69 | 5.68 | 19.60 | 42.66 | 29.90 | 23.31 | +21.13 |
+| MoE-only | 12.61 | 4.55 | 21.20 | 31.74 | 19.90 | 18.00 | +15.82 |
+| MoE + V-LUMEN | 14.41 | 3.64 | 23.50 | 31.24 | 18.20 | 18.20 | +16.02 |
+
+Retraining all five settings from scratch with this code (seed 1) gives averages of
+19.29 / 22.24 / 23.04 / 19.71 / 19.28, within the seed-to-seed variation above. The
+memory-table initialisation was not seeded in the original runs, so retrained numbers
+are not bit-identical to the released checkpoints.
 
 **Tab. 3 — Zero-shot accuracy (%)** of V-LUMEN-only on benchmarks outside the training
 curriculum (frozen backbone, no few-shot samples, images disjoint from training data)
 
 | Benchmark | Vanilla | + V-LUMEN (3 seeds) | Released seed 1 |
 |---|---|---|---|
-| TextVQA | 11.00 | 37.17 ± 3.42 (+26.17) | 36.80 |
-| OCR-VQA | 13.80 | 47.67 ± 0.76 (+33.87) | 46.30 |
-| VizWiz-VQA | 2.00 | 9.97 ± 1.84 (+7.97) | 10.50 |
+| TextVQA | 11.00 | 37.17 ± 3.42 (+26.17) | 34.90 |
+| OCR-VQA | 13.80 | 47.67 ± 0.76 (+33.87) | 46.80 |
+| VizWiz-VQA | 2.00 | 9.97 ± 1.84 (+7.97) | 8.40 |
 
 Evaluation protocol: held-out 90% of each benchmark under a fixed split seed (42), up to
 1,000 examples, greedy decoding with at most 32 new tokens, 224×224 images, relaxed
